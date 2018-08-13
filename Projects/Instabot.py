@@ -1,11 +1,11 @@
+from InstagramAPI import ImageUtils,InstagramAPI
 import urllib.request as req
-from InstagramAPI import InstagramAPI
-from pathlib import Path
-import os,sys
-from InstagramAPI import ImageUtils
 from PIL import Image
 
-InstagramAPI = InstagramAPI('straighthalal','jibneh82')
+
+InstagramAPI = InstagramAPI('culver_loons','jibneh82')
+InstagramAPI.login()
+
 
 def image_aspect_change(image_loc):
     width,height = ImageUtils.getImageSize(image_loc)
@@ -21,13 +21,11 @@ def image_aspect_change(image_loc):
 
 def image_handle(photo_url, photo):
     '''nested helper function for image resizing and posting'''
-    InstagramAPI.login()
     req.urlretrieve(photo_url, photo)
     image_aspect_change(photo)
     InstagramAPI.uploadPhoto(photo)
 
 def local_image(photo,photo_loc):
-    InstagramAPI.login()
     base = Image.open(photo)
     base.save("Projects/image_name.jpg")
     image_aspect_change(photo_loc)

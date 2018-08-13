@@ -4,7 +4,6 @@ import sys
 import time
 
 
-#file = open('/Users/Kunbargi/Desktop/reddit bot/allsubreddits.txt','r')
 username = 'no_flex_zone'
 password = 'bisherk92'
 client_id = 'RjI-0KSmJMWajg'
@@ -29,23 +28,17 @@ def get_subs(r,query):
     return set_list
 
 
-def scrape_threads(sub_list,keyword):
+def scrape_threads(r,sub_list,keyword):
     organized_sub = []
     for subs in sub_list:
-        print(subs)
         sublist_posts = r.subreddit('{}'.format(subs)).hot(limit = 25)
         sub_dict = dict()
         for submission in sublist_posts:
-            if keyword in submission.title:
-                print(submission.title)
-                time.sleep(1)
+            if keyword.lower() in submission.title.lower():
                 sub_dict[submission.title] = submission.id
             else:
                 continue
-        organized_sub.append(sub_dict)
-        #organized_sub.append({submission.title:submission for submission in sublist_posts})
-        time.sleep(1)
-
+            organized_sub.append(sub_dict)
     return organized_sub
 
 
@@ -71,12 +64,11 @@ def submission_scrape(sub_id):
     submission = r.submission(id = sub_id)
     forest = comment_forest.CommentForest(submission,submission.comments)
     comment_list = DFT(forest)
-    print(comment_list)
     return comment_list
 
 
 def run(param1,param2):
     r = login()
     subs = get_subs(r,param1)
-
-    return subs
+    found_threads = scrape_threads(r,subs,param2)
+    return found_threads
