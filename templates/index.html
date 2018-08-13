@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset = 'UTF-8' />
+  <meta name = 'viewport' content="width=device-width, initial-scale=1" />
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/design.css') }}">
+
+  <title>
+    Bishers.World
+  </title>
+
+</head>
+<body>
+  <nav id = 'hnav'>
+    <a href = '#' class = 'navitems'> Ball </a>
+    <a href = '#' class = 'navitems'> Blog </a>
+    <a href = '#' class = 'navitems'> Projects </a>
+    <!-- <a href = '#' class = 'navitems'> Stats </a> -->
+  </nav>
+
+
+
+  <div id = 'projectx'>
+
+    <div class = 'projbox'>
+      <img class = 'imgz' src = '/static/snoo2.png'>
+      <div>
+        <p class = 'specialp'> Use the reddit bot </p>
+        <form action = '/redditbot' method = 'POST'>
+          <input type = 'text' name = 'first'>
+          <input type = 'submit' name = 'info'>
+        </form>
+      </div>
+    </div>
+
+    <div class = 'projbox'>
+      <img class = 'imgz' src = '/static/twitter.png'>
+      <div>
+        <p class = 'specialp'> Use the twitter bot </p>
+        <form action = '/twitterbot' method = 'POST'>
+          <input type = 'text' name = 'keyword1'>
+          <input type = 'text' name = 'keyword2'>
+          <input type = 'submit' name = 'oi'>
+        </form>
+      </div>
+    </div>
+
+    <div class = 'projbox'>
+      <img class = 'imgz' src = '/static/insta.png'>
+      <div>
+        <p class = 'specialp'> Use the Insta bot </p>
+        <form  action = '/instabot' method = 'POST' enctype="multipart/form-data">
+          <input type='text' name='tpic'>
+        <div class = 'formstuff'>
+          <input type="file" name="file" accept="image/*" onchange="javascript:this.form.submit();">
+        </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+<div id= 'output'>
+<h2>{{info}}</h2>
+</div>
+
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ url_for('static', filename='jsstuff.js') }}"></script>
+
+</body>
+</html>

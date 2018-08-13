@@ -1,0 +1,80 @@
+<style>
+
+#fakenews{}
+
+*{
+  padding:0;
+  margin:0;
+  text-align: center;
+
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a{ text-decoration: none;}
+
+.specialp{
+  color:white;
+}
+
+#hnav{
+  display:flex;
+  justify-content: space-around;
+  height: 15%;
+  border-radius: 4px;
+  align-items:center;
+
+}
+
+.navitems{
+  font-size:20px;
+  color: white;
+}
+
+
+#top_level{
+  background: linear-gradient(180deg, #DB8080, #FC5800);
+}
+
+#projectx{
+  padding-top: 5%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  align-content: center;
+
+
+  }
+
+.projbox{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  border-radius: 3px;
+  padding-top: 50px;
+  }
+
+.imgz{
+  width: 150px;
+  height: auto;
+}
+
+.formstuff{
+  padding-left: 22.5%;
+}
+
+#output{
+  display: flex;
+  align-content: flex-start;
+}
+
+
+</style>
