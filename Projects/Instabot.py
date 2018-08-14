@@ -2,7 +2,7 @@ import urllib.request as req
 from InstagramAPI import ImageUtils,InstagramAPI
 from PIL import Image
 
-global InstagramAPI
+#global InstagramAPI
 InstagramAPI = InstagramAPI('culver_loons','jibneh82')
 InstagramAPI.login()
 
@@ -26,7 +26,6 @@ def image_handle(photo_url, photo):
     InstagramAPI.uploadPhoto(photo)
 
 def local_image(photo,photo_loc):
-    base = Image.open(photo)
-    base.save("Projects/image_name.jpg")
+    base = Image.open(photo).convert('RGB').save("Projects/image_name.jpg")
     image_aspect_change(photo_loc)
     InstagramAPI.uploadPhoto(photo_loc)
