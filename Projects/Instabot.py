@@ -1,8 +1,8 @@
-from InstagramAPI import ImageUtils,InstagramAPI
 import urllib.request as req
+from InstagramAPI import ImageUtils,InstagramAPI
 from PIL import Image
 
-
+global InstagramAPI
 InstagramAPI = InstagramAPI('culver_loons','jibneh82')
 InstagramAPI.login()
 
