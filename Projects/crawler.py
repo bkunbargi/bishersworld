@@ -72,7 +72,7 @@ def run(param1,param2):
     subs = get_subs(r,param1)
     found_threads = scrape_threads(r,subs,param2)
     comment_list = []
-    for dict in submission_dict_list:
+    for dict in found_threads:
         for k,v in dict.items():
             if keyword in k.lower():
                 comment_list.append(submission_scrape(dict[k]))
