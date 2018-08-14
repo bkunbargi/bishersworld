@@ -4,7 +4,7 @@ from PIL import Image
 
 
 global InstagramAPI
-InstagramAPI = InstagramAPI('whoorville','jibneh82')
+InstagramAPI = InstagramAPI('culver_loons','jibneh82')
 InstagramAPI.login()
 
 
