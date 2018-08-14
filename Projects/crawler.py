@@ -60,8 +60,9 @@ def DFT(parent_comment):
     return comment_list
 
 
-def submission_scrape(sub_id):
+def submission_scrape(r,sub_id):
     submission = r.submission(id = sub_id)
+    submission.comments.replace_more(limit=0)
     forest = comment_forest.CommentForest(submission,submission.comments)
     comment_list = DFT(forest)
     return comment_list
@@ -74,8 +75,6 @@ def run(param1,param2):
     comment_list = []
     for dict in found_threads:
         for k,v in dict.items():
-            if keyword in k.lower():
-                comment_list.append(submission_scrape(dict[k]))
-
+            comment_list.append((k,submission_scrape(r,dict[k])))
 
     return comment_list

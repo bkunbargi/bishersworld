@@ -31,11 +31,9 @@ def run_bot(input1, input2):
     goat_set = set(goat_list)
     return goat_set
 
-def retweet(tweet_list):
-
+def retweet(tweeted):
     try:
-        tweet = tweet_list.pop()
-        api.update_status(str(tweet))
-        return tweet
+        api.update_status(str(tweeted))
+        return tweeted
     except:
-        return 'No tweets found with those keywords.'
+        return 'none'
