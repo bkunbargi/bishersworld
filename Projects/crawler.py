@@ -38,7 +38,7 @@ def scrape_threads(r,sub_list,keyword):
                 sub_dict[submission.title] = submission.id
             else:
                 continue
-            organized_sub.append(sub_dict)
+        organized_sub.append(sub_dict)
     return organized_sub
 
 
@@ -71,4 +71,11 @@ def run(param1,param2):
     r = login()
     subs = get_subs(r,param1)
     found_threads = scrape_threads(r,subs,param2)
-    return found_threads
+    comment_list = []
+    for dict in submission_dict_list:
+        for k,v in dict.items():
+            if keyword in k.lower():
+                comment_list.append(submission_scrape(dict[k]))
+
+
+    return comment_list

@@ -2,7 +2,6 @@ import urllib.request as req
 from InstagramAPI import ImageUtils,InstagramAPI
 from PIL import Image
 
-#global InstagramAPI
 InstagramAPI = InstagramAPI('culver_loons','jibneh82')
 InstagramAPI.login()
 
@@ -16,7 +15,6 @@ def image_aspect_change(image_loc):
     my_pic = Image.open(image_loc)
     my_pic = my_pic.resize((width,new_height),Image.ANTIALIAS)
     my_pic.save(image_loc)
-    print('Success')
 
 
 def image_handle(photo_url, photo):
