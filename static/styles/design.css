@@ -2,79 +2,166 @@
 
 #fakenews{}
 
+
 *{
   padding:0;
   margin:0;
   text-align: center;
 
+
 }
 
-html {
-    height: 100%;
+body{
+  height:100vh;
 }
-body {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+p{
+  font-weight: bold;
+  font-size: 15px;
+  font-family: 'Libre Franklin', sans-serif;
+  color: white;
 
-a{ text-decoration: none;}
+}
 
 .specialp{
   color:white;
+  font-family: courier;
 }
 
 #hnav{
   display:flex;
   justify-content: space-around;
-  height: 15%;
-  border-radius: 4px;
   align-items:center;
-
 }
 
 .navitems{
-  font-size:20px;
+  font-size:25px;
   color: white;
-}
-
-
-#top_level{
-  background: linear-gradient(180deg, #DB8080, #FC5800);
+  font-family: arial;
 }
 
 #projectx{
-  padding-top: 5%;
+  padding-top: 10%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   width: 100%;
-  align-content: center;
-
 
   }
 
 .projbox{
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  border-radius: 3px;
-  padding-top: 50px;
+
+  }
+
+.upperdude{
+    display: flex;
+    flex-direction: column;
   }
 
 .imgz{
+  align-self: center;
   width: 150px;
   height: auto;
 }
 
-.formstuff{
-  padding-left: 22.5%;
+#outputs{
+  display: flex;
+  align-content: flex-start;
+  padding-top: 15px;
+}
+
+.upperdudes{
+    display: flex;
+    flex-direction: column;
+  }
+
+.sub1,.sub2{
+  width:75px;
+}
+
+input{
+-webkit-border-radius: 5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    -webkit-border-radius: 5px;
+    border: 2px solid white;
 }
 
 #output{
-  display: flex;
-  align-content: flex-start;
+  width:150px;
+  height:auto;
+  border: .5px solid white;
+  -webkit-border-radius: 5px;
 }
 
+
+.projwrapper{
+  padding-left: 1em;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.projwrapper > h2{
+  color: white;
+  font-family: 'Dosis', sans-serif;
+
+}
+
+
+.persiproj{
+
+  display: flex;
+  flex-flow: column;
+
+}
+
+.tab {
+    float: left;
+
+}
+
+.tab button {
+    display: block;
+    background-color: inherit;
+    padding: 22px 16px;
+    width: 100%;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+    color: white;
+
+
+}
+
+.othertab {
+    display: block;
+    background-color: inherit;
+    padding: 22px 16px;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+
+#craighistory,#tweetat,#SentAnaly,#Posting,#search,#post,#instaman,#bigred,#tweetdude,#craiger{
+  display: none;
+}
 
 </style>

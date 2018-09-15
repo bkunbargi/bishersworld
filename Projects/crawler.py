@@ -1,4 +1,4 @@
-from praw.models import comment_forest
+from praw.models import comment_forest,Comment
 import praw
 import sys
 import time
@@ -66,6 +66,36 @@ def submission_scrape(r,sub_id):
     forest = comment_forest.CommentForest(submission,submission.comments)
     comment_list = DFT(forest)
     return comment_list
+
+
+def DFT2(parent_comment,m_comment,u_comment):
+    m_comment = m_comment.lower()
+    children = [i for i in parent_comment]
+    visited_dic = {i:False for i in children}
+    print('Looking')
+    if False not in visited_dic.values():
+        return
+    else:
+        for k,v in visited_dic.items():
+            if v == False:
+                curr_child = k
+                visited_dic[k] = True
+                print(curr_child.body,m_comment)
+                curr_text = str(curr_child.body).lower()
+                curr_text = curr_text.replace('*','')
+                print(curr_text == m_comment)
+                if curr_text == m_comment:
+                    curr_child.reply(u_comment)
+                    time.sleep(1)
+                    return
+            if curr_child.replies:
+                DFT2(curr_child.replies,m_comment,u_comment)
+
+
+def responder(sub_id,made_comment,u_response):
+    r = login()
+    submission = r.submission(id=sub_id)
+    DFT2(submission.comments,made_comment,u_response)
 
 
 def run(param1,param2):

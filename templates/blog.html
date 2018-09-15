@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset = 'UTF-8' />
+  <meta name = 'viewport' content="width=device-width, initial-scale=1" />
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/blogdes.css') }}">
+
+  <title>
+    BishersWorld/Projects
+  </title>
+
+</head>
+<body>
+
+  <p>How I built it: <br>
+    In terms of technologies used, It was all built with Pyhton the PRAW python Library.
+    To get it really working though I had to search through all the comments and go as deep as they went.
+    Which had me thinking about a similiar problem I solved in a C++ class I took where we built a Depth First and Breadth First Maze Generator and Solver
+    and figured that I could apply the same technique when searching the comments, I wrote a depth first algorithim that has a time complexity of O(n+m)
+  </p>
+
+  <br><p>
+    Why I built it:<br> This project had two purposes  Firstly to build a better search function,
+    I've always had trouble using reddit's search, as I generally
+    found the results to be pretty sparse and sometimes just completely unreliable.
+    Reddit is a goldmine of information and I've found that when I'm doing online research when I add 'reddit' at the end of my google search going through the threads
+    is a great way to find information and as an efficieny freak
+    I decided that if I could search for all relevant threads and simultaneously look through all of them at once for keywords that I'm looking for that would be invaluable for me
+    Secondly, Yik Yak was a location based app that was growing until the developers started allowing usernames
+    One of the beautiful things about the internet is the level of anonimity that can be maintained, maybe that is a double edged sword
+    and this project may have been reckless because it has been show that people are prone to be more rude when they can be anonymous and even though your identity can be hidden if we look at Yik Yak
+    Something as simple as a username removes that anonymity. People are more honest when they're anonymous, sometimes at the cost of us being assholes but nonetheless honesty is cool.
+  </p>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="{{ url_for('static', filename='jsstuff.js') }}"></script>
+
+</body>
+</html>

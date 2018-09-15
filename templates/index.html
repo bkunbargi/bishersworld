@@ -11,65 +11,242 @@
 
 </head>
 <body>
+<!--
   <nav id = 'hnav'>
-    <!-- <a href = '#' class = 'navitems'> Ball </a> -->
+     <a href = '#' class = 'navitems'> Ball </a> -->
 
-    <a href = '#' class = 'navitems'> Blog </a>
-    <a href = '#' class = 'navitems'> Projects </a>
-    <!-- <a href = '#' class = 'navitems'> Stats </a> -->
-  </nav>
-
+  <!--   <a href = "{{url_for('blog')}}" class = 'navitems'> Blog </a> -->
+  <!--   <a href = "{{url_for('projecto')}}" class = 'navitems'> Projects </a> -->
+    <!-- <a href = '#' class = 'navitems'> Stats </a>
+  </nav> -->
 
 
   <div id = 'projectx'>
 
     <div class = 'projbox'>
       <img class = 'imgz' src = '/static/snoo2.png'>
-      <div>
-        <p class = 'specialp'> Use the reddit bot </p>
-        <form action = '/redditbot' method = 'POST'>
-          <input type = 'text' name = 'subkey'>
-          <input type = 'text' name = 'redditkeyword'>
-          <input type = 'submit' name = 'info'>
+      <p class = 'specialp'>Reddit Bot</p>
+      <div class = upperdude>
+        <form class = 'upperdude' action = '/redditbot' method = 'POST'>
+          <input type = 'text' name = 'subkey' placeholder="Topic ex. NBA" class = 'redditinput'>
+          <input type = 'text' name = 'redditkeyword' placeholder="Subtopic ex. Lebron" class = 'redditinput'>
+          <input type = 'text' name = 'madecomment' placeholder="Comment to respond" class = 'redditinput'>
+          <input type = 'text' name = 'subid' placeholder="Subreddit ID" class = 'redditinput'>
+          <input type = 'text' name = 'uresponse' placeholder="Response" class = 'redditinput'>
+
+
+          <input type = 'submit' name ='ugh' class = 'sub1'>
+
         </form>
       </div>
     </div>
 
-    <div class = 'projbox'>
+    <div class = 'projbox specialp'>
       <img class = 'imgz' src = '/static/twitter.png'>
-      <div>
-        <p class = 'specialp'> Use the twitter bot </p>
-        <form action = '/twitterbot' method = 'POST'>
-          <input type = 'text' name = 'keyword1'>
-          <input type = 'text' name = 'keyword2'>
-          <input type = 'text' name = 'user_tweet'>
-          <input type = 'submit' name = 'oi'>
+      <p class = 'specialp'> Twitter Bot</p>
+        <form class = 'upperdude' action = '/twitterbot' method = 'POST'>
+          <input type = 'text' name = 'user_tweet' placeholder="Tweet">
+          <input type = 'text' name = 'responderhandle' placeholder="Tweeting @">
+          <input type = 'text' name = 'statusid' placeholder = 'Status Id'>
+          <input type = 'text' name = 'keyword1' placeholder="Sentinment Analysis">
+          <input type = 'submit' name ='ugh' class = 'sub2'>
         </form>
-      </div>
     </div>
 
-    <div class = 'projbox'>
+   <div class = 'projbox'>
       <img class = 'imgz' src = '/static/insta.png'>
-      <div>
-        <p class = 'specialp'> Use the Insta bot </p>
-        <form  action = '/instabot' method = 'POST' enctype="multipart/form-data">
-          <input type='text' name='tpic'>
-        <div class = 'formstuff'>
-          <input type="file" name="file" accept="image/*" onchange="javascript:this.form.submit();">
-        </div>
+      <p class = 'specialp'>Insta Bot</p>
+        <form class = 'upperdudes' action = '/instabot' method = 'POST' enctype="multipart/form-data">
+          <input type='text' name='tpic' placeholder="Image Url">
+          <label for="file-upload" class="custom-file-upload">
+            <input id='file-upload' type="file" name="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+            <p class = 'specialp'>  Upload </p>
+          </label>
+          <img id="output">
+          <input type='text' name='caption' placeholder="Caption">
+          <input type = 'submit' name ='ugh' class = 'sub3'>
+
         </form>
-      </div>
     </div>
+
+  <div class = 'projbox'>
+    <img class = 'imgz' src = '/static/craigslist.png'>
+    <p class = 'specialp'>Craigslist Bot</p>
+      <form class = 'upperdudes' action = '/instabot' method = 'POST'>
+        <input type ='submit' name ='ugh' class = 'sub4'>
+
+      </form>
 
   </div>
 
-<div id= 'output'>
+
+
+
+  </div>
+
+<div id= 'outputs'>
 <h2>{{info}}</h2>
 </div>
 
 
+<div class = 'projwrapper'>
+
+  <button class="guidelinks othertab" onclick="openBig(event, 'bigred')">Reddit</button>
+  <button class="guidelinks othertab" onclick="openBig(event, 'instaman')">Instagram</button>
+  <button class="guidelinks othertab" onclick="openBig(event, 'tweetdude')">Twitter</button>
+  <button class="guidelinks othertab" onclick="openBig(event, 'craiger')">Craigslist</button>
+
+
+  <div id = 'bigred' class = 'persiproj'>
+    <img class = 'imgz' src = '/static/snoo2.png'>
+    <div class="tab">
+       <button class="tablinks" onclick="openCity(event, 'search')">Search</button>
+       <button class="tablinks" onclick="openCity(event, 'post')">Post</button>
+
+
+      <div id = 'search' class = 'tabcontent'>
+
+      <p>A two step search function that pulls all related subreddits to input 1 and grabs all the comments<br> from threads with Input 2 in the title.
+      Enter both keywords click submit, sit back for a minute
+      Then with a quick control+f that is simultaneously checking all threads at once to find the comment chain that has what you're looking for.
+      <br><br>Required Input:
+      Input 1: The type of subreddit that is relevant to what you're looking for. <br>
+      Input 2: The Keyword of what you're looking for, e.x. "I'm looking for information related to Django(Input 2)
+      I might find it in Web Development(Input 1) related subreddits" </p>
+      </div>
+
+      <div id = 'post' class = 'tabcontent'>
+
+      <p>Reply to a comment keeping your username anonymous:<br>
+        Uses an account associated with this bot to find the comment to respond to and responds with the submitted comment
+        <br><br>Required Input:<br>
+        Input 1: The thread ID(Input 1), can be found in the link page  PUT A PICTURE  <br>
+        Input 2: The comment that you want to respond to <br>
+        Input 3: Your desired response to that comment (Input 2) <br>
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div id = 'instaman' class = 'persiproj'>
+    <img class = 'imgz' src = '/static/insta.png'>
+    <div class="tab">
+       <button class="tablinks" onclick="openCity(event, 'Posting')">Posting</button>
+
+
+    <div id = 'Posting' class = 'tabcontent'>
+      <p> A community controlled Instagram page: <br>
+          Post with either a URL or choose a file to upload from computer
+      <br><br>Required Input:<br>
+      First Input: Accepts the URL to an image <br>
+      Upload: To upload an image from hard drive and displays the preview<br>
+      One or the other only of the above <br>
+      Caption: Associates a caption and/or hashtags with the image being uploaded from URL or File <br>
+    </p>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+  <div id = 'tweetdude' class = 'persiproj'>
+    <img class = 'imgz' src = '/static/twitter.png'>
+    <div class="tab">
+       <button class="tablinks" onclick="openCity(event, 'SentAnaly')">Sentiment Analysis</button>
+       <button class="tablinks" onclick="openCity(event, 'tweetat')">Tweet @</button>
+    </div>
+    <div id = 'SentAnaly' class = 'tabcontent'>
+      <p>Keyword Sentiment Analysis:<br>
+         Retweets the highest and lowest scoring sentimets pertaining to the keyword.
+      <br><br>Required Input:<br>
+      Keyword: This keyword is the only required input for this functionality.
+    </p>
+
+    </div>
+    <div id = 'tweetat' class = 'tabcontent'>
+      <p> Anonymous Tweeting: <br>
+          Use the account associated with this bot to tweet at someone.
+      <br><br>Required Input:<br>
+      User Tweet: Your desired tweet <br>
+      Username: The username of the person you are responding to drop the '@'<br>
+      Status ID: Can be found in the URL when the tweet is open in your browser PICTURE  <br>
+    </p>
+
+    </div>
+
+
+  </div>
+
+  <div id = 'craiger' class = 'persiproj'>
+    <img class = 'imgz' src = '/static/craigslist.png'>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'craighistory')">Posting</button>
+  </div>
+
+  <div id = 'craighistory' class = 'tabcontent'>
+    <p>Craigslist Prices: <br>
+      Compiled data from each for sale page to build an average price for each item.
+      <br><br>Required Input:<br>
+      None! <br>
+      Three ways to use:<br>
+      Show all or... <br>
+      Show entire section or... <br>
+      Choose section and item for result on specific item <br>
+  </div>
+
+  </div>
+
+</div>
+</div>
+
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="{{ url_for('static', filename='jsstuff.js') }}"></script>
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function openBig(evt, cityName) {
+    // Declare all variables
+    var i, persiproj, guidelinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    persiproj = document.getElementsByClassName("persiproj");
+    for (i = 0; i < persiproj.length; i++) {
+        persiproj[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    guidelinks = document.getElementsByClassName("guidelinks");
+    for (i = 0; i < guidelinks.length; i++) {
+        guidelinks[i].className = guidelinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
 
 </body>
 </html>

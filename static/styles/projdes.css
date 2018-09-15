@@ -1,0 +1,92 @@
+<style>
+
+#fakenews{}
+
+*{
+  padding:0;
+  margin:0;
+  font-weight: bold;
+  color: white;
+}
+
+
+body {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 50px;
+}
+
+
+p,button > a{
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Libre Franklin', sans-serif;
+  color: white;
+
+}
+
+.projwrapper > h2{
+  color: black;
+  font-family: 'Dosis', sans-serif;
+
+}
+
+
+
+.splash{
+  font-family: 'Dosis', sans-serif;
+  text-align: center;
+  font-size: 75px;
+  color: black;
+}
+
+.projwrapper{
+  padding-left: 1em;
+  display: flex;
+  flex-flow: column;
+  height: 86.5%;
+  justify-content: space-around;
+}
+
+
+.persiproj{
+
+  display: flex;
+  flex-flow: row;
+
+}
+
+.imgz{
+  align-self: center;
+  width: 50px;
+  height: auto;
+}
+
+
+.tab {
+    float: left;
+
+}
+
+.tab button {
+    display: block;
+    background-color: inherit;
+    padding: 22px 16px;
+    width: 100%;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    border:none;
+
+}
+
+
+
+
+#craighistory,#tweetat,#SentAnaly,#Posting,#search,#post{
+  display: none;
+}
+</style>

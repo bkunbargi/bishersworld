@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset = 'UTF-8' />
+  <meta name = 'viewport' content="width=device-width, initial-scale=1" />
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/projdes.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Libre+Franklin|PT+Sans+Caption" rel="stylesheet">
+  <title>
+    BishersWorld/Projects
+  </title>
+
+</head>
+<body>
+<h1 class = 'splash'>
+  Project Descriptions
+</h1>
+
+<div class = 'projwrapper'>
+  <h2> Reddit </h2>
+
+  <div class = 'persiproj'>
+    <img class = 'imgz' src = '/static/snoo2.png'>
+    <div class="tab">
+       <button class="tablinks" onclick="openCity(event, 'search')"><a href='#'>Search</a></button>
+       <button class="tablinks" onclick="openCity(event, 'post')"><a href='#'>Post</a></button>
+    </div>
+
+      <div id = 'search' class = 'tabcontent'>
+
+      <p>A two step search function that pulls all related subreddits to input 1 and grabs all the comments from threads with Input 2 in the title.
+      Enter both keywords click submit, sit back for a minute
+      Then with a quick control+f that is simultaneously checking all threads at once to find the comment chain that has what you're looking for.
+      <br><br>Required Input:
+      Input 1: The type of subreddit that is relevant to what you're looking for. <br>
+      Input 2: The Keyword of what you're looking for, e.x. "I'm looking for information related to Django(Input 2)
+      I might find it in Web Development(Input 1) related subreddits" </p>
+      </div>
+
+      <div id = 'post' class = 'tabcontent'>
+
+      <p>Reply to a comment keeping your username anonymous:<br>
+        Uses an account associated with this bot to find the comment to respond to and responds with the submitted comment
+        <br><br>Required Input:<br>
+        Input 1: The thread ID(Input 1), can be found in the link page  PUT A PICTURE  <br>
+        Input 2: The comment that you want to respond to <br>
+        Input 3: Your desired response to that comment (Input 2) <br>
+      </p>
+    </div>
+</div>
+
+
+  <h2> Insta </h2>
+  <div class = 'persiproj'>
+    <img class = 'imgz' src = '/static/insta.png'>
+    <div class="tab">
+       <button class="tablinks" onclick="openCity(event, 'Posting')"><a href='#'>Posting</a></button>
+    </div>
+
+    <div id = 'Posting' class = 'tabcontent'>
+      <p> A community controlled Instagram page: <br>
+          Post with either a URL or choose a file to upload from computer
+      <br><br>Required Input:<br>
+      First Input: Accepts the URL to an image <br>
+      Upload: To upload an image from hard drive and displays the preview<br>
+      One or the other only of the above <br>
+      Caption: Associates a caption and/or hashtags with the image being uploaded from URL or File <br>
+    </p>
+
+    </div>
+
+
+  </div>
+
+  <h2> Twitter </h2>
+  <div class = 'persiproj'>
+    <img class = 'imgz' src = '/static/twitter.png'>
+    <div class="tab">
+       <button class="tablinks" onclick="openCity(event, 'SentAnaly')"><a href='#'>Sentiment Analysis</a></button>
+       <button class="tablinks" onclick="openCity(event, 'tweetat')"><a href='#'>Tweet @</a></button>
+    </div>
+    <div id = 'SentAnaly' class = 'tabcontent'>
+      <p>Keyword Sentiment Analysis:<br>
+         Retweets the highest and lowest scoring sentimets pertaining to the keyword.
+      <br><br>Required Input:<br>
+      Keyword: This keyword is the only required input for this functionality.
+    </p>
+
+    </div>
+    <div id = 'tweetat' class = 'tabcontent'>
+      <p> Anonymous Tweeting: <br>
+          Use the account associated with this bot to tweet at someone.
+      <br><br>Required Input:<br>
+      User Tweet: Your desired tweet <br>
+      Username: The username of the person you are responding to drop the '@'<br>
+      Status ID: Can be found in the URL when the tweet is open in your browser PICTURE  <br>
+    </p>
+
+    </div>
+
+
+  </div>
+
+  <h2> Craigs </h2>
+  <div class = 'persiproj'>
+    <img class = 'imgz' src = '/static/craigslist.png'>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'craighistory')"><a href='#'>Posting</a></button>
+  </div>
+
+  <div id = 'craighistory' class = 'tabcontent'>
+    <p>Craigslist Prices: <br>
+      Compiled data from each for sale page to build an average price for each item.
+      <br><br>Required Input:<br>
+      None! <br>
+      Three ways to use:<br>
+      Show all or... <br>
+      Show entire section or... <br>
+      Choose section and item for result on specific item <br>
+  </div>
+
+  </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="{{ url_for('static', filename='projectjs.js') }}"></script>
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>
