@@ -20,16 +20,15 @@
     <!-- <a href = '#' class = 'navitems'> Stats </a>
   </nav> -->
 
-
   <div id = 'projectx'>
 
-    <div class = 'projbox'>
+    <div class = 'projbox specialp'>
       <img class = 'imgz' src = '/static/snoo2.png'>
       <p class = 'specialp'>Reddit Bot</p>
-      <div class = upperdude>
         <form class = 'upperdude' action = '/redditbot' method = 'POST'>
           <input type = 'text' name = 'subkey' placeholder="Topic ex. NBA" class = 'redditinput'>
           <input type = 'text' name = 'redditkeyword' placeholder="Subtopic ex. Lebron" class = 'redditinput'>
+          OR
           <input type = 'text' name = 'madecomment' placeholder="Comment to respond" class = 'redditinput'>
           <input type = 'text' name = 'subid' placeholder="Subreddit ID" class = 'redditinput'>
           <input type = 'text' name = 'uresponse' placeholder="Response" class = 'redditinput'>
@@ -38,7 +37,6 @@
           <input type = 'submit' name ='ugh' class = 'sub1'>
 
         </form>
-      </div>
     </div>
 
     <div class = 'projbox specialp'>
@@ -48,6 +46,7 @@
           <input type = 'text' name = 'user_tweet' placeholder="Tweet">
           <input type = 'text' name = 'responderhandle' placeholder="Tweeting @">
           <input type = 'text' name = 'statusid' placeholder = 'Status Id'>
+          OR
           <input type = 'text' name = 'keyword1' placeholder="Sentinment Analysis">
           <input type = 'submit' name ='ugh' class = 'sub2'>
         </form>
@@ -85,12 +84,12 @@
   </div>
 
 <div id= 'outputs'>
-<h2>{{info}}</h2>
+<h2 class = 'specialp'>{{info}}</h2>
 </div>
 
 
-<div class = 'projwrapper'>
-
+<div class = 'projwrapper specialp2'>
+  HOW TO USE:
   <button class="guidelinks othertab" onclick="openBig(event, 'bigred')">Reddit</button>
   <button class="guidelinks othertab" onclick="openBig(event, 'instaman')">Instagram</button>
   <button class="guidelinks othertab" onclick="openBig(event, 'tweetdude')">Twitter</button>
@@ -102,6 +101,7 @@
     <div class="tab">
        <button class="tablinks" onclick="openCity(event, 'search')">Search</button>
        <button class="tablinks" onclick="openCity(event, 'post')">Post</button>
+    </div>
 
 
       <div id = 'search' class = 'tabcontent'>
@@ -125,7 +125,7 @@
         Input 3: Your desired response to that comment (Input 2) <br>
       </p>
     </div>
-  </div>
+
 </div>
 
   <div id = 'instaman' class = 'persiproj'>
@@ -156,7 +156,7 @@
     <div class="tab">
        <button class="tablinks" onclick="openCity(event, 'SentAnaly')">Sentiment Analysis</button>
        <button class="tablinks" onclick="openCity(event, 'tweetat')">Tweet @</button>
-    </div>
+
     <div id = 'SentAnaly' class = 'tabcontent'>
       <p>Keyword Sentiment Analysis:<br>
          Retweets the highest and lowest scoring sentimets pertaining to the keyword.
@@ -175,6 +175,7 @@
     </p>
 
     </div>
+  </div>
 
 
   </div>
@@ -183,22 +184,21 @@
     <img class = 'imgz' src = '/static/craigslist.png'>
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'craighistory')">Posting</button>
+    <div id = 'craighistory' class = 'tabcontent'>
+      <p>Craigslist Prices: <br>
+        Compiled data from each for sale page to build an average price for each item.
+        <br><br>Required Input:<br>
+        None! <br>
+        Three ways to use:<br>
+        Show all or... <br>
+        Show entire section or... <br>
+        Choose section and item for result on specific item <br>
+      </div>
+    </div>
   </div>
 
-  <div id = 'craighistory' class = 'tabcontent'>
-    <p>Craigslist Prices: <br>
-      Compiled data from each for sale page to build an average price for each item.
-      <br><br>Required Input:<br>
-      None! <br>
-      Three ways to use:<br>
-      Show all or... <br>
-      Show entire section or... <br>
-      Choose section and item for result on specific item <br>
-  </div>
 
-  </div>
 
-</div>
 </div>
 
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -247,6 +247,5 @@ function openBig(evt, cityName) {
 }
 
 </script>
-
 </body>
 </html>

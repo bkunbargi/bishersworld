@@ -6,9 +6,16 @@ $(document).ready(function(){
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
+  console.log(color)
   return color;
   }
 
+
+//var random = getRandomColor();
+//var random2 = getRandomColor();
+//var deg = '180deg';
+//var linear = `linear-gradient(${deg},${random},${random2})`;
+//$("html").css("background",linear);
 
 var sub1 = $('.sub1')
 sub1.hide()
@@ -36,14 +43,14 @@ $('input[name=craigsbit]').bind('keypress keydown keyup change',function(){
   sub4.show(); });
 
 
-$(document.body).click(function(){
-
-  var random = getRandomColor();
-  var random2 = getRandomColor();
-  var deg = '180deg';
-  var linear = `linear-gradient(${deg},${random},${random2})`;
-  $("html").css("background",linear);
-});
+//$(document.body).click(function(){
+//
+//  var random = getRandomColor();
+//  var random2 = getRandomColor();
+//  var deg = '180deg';
+//  var linear = `linear-gradient(${deg},${random},${random2})`;
+//  $("html").css("background",linear);
+//});
 
 
 

@@ -3,17 +3,12 @@
 #fakenews{}
 
 
-*{
-  padding:0;
-  margin:0;
-  text-align: center;
-
-
-}
-
 body{
-  height:100vh;
+  background: linear-gradient(#C0CB57,#3EC8D6);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 p{
   font-weight: bold;
   font-size: 15px;
@@ -26,6 +21,15 @@ p{
   color:white;
   font-family: courier;
 }
+
+
+.specialp2{
+  padding-top: 10px;
+  color:white;
+  font-family: courier;
+  font-size: 25px;
+}
+
 
 #hnav{
   display:flex;
@@ -155,7 +159,6 @@ input[type="file"] {
     font-weight: bold;
     color: white;
 }
-
 
 
 
