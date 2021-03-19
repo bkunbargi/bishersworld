@@ -16,7 +16,7 @@ imageio==2.1.2
 instabot==0.4.2
 InstagramAPI==1.0.2
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 kiwisolver==1.0.1
 magickwand==0.2
 MarkupSafe==1.0
