@@ -51,7 +51,7 @@ textblob==0.15.1
 tqdm==4.11.2
 tweepy==3.6.0
 update-checker==0.16
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.1.0
 Wand==0.4.4
 web.py==0.40.dev0
